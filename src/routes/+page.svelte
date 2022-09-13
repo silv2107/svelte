@@ -3,14 +3,14 @@
 </script>
 
 <header class="top">
-    <h1>Lighten up with a joke</h1>
-    <h3>Laughter is an instant vacation</h3>
+    <h1 class="top__title">STAR WARS</h1>
+    <h3 class="top__subTitle">THE FORCE IS WITH YOU</h3>
 </header>
 <div class="jokeWrapper">
     <ul class="jokeContainer">
-        {#each data.jokes as joke }
+        {#each data.cast.results as person }
         <!-- ${data.jokes.indexOf(joke)} -->
-        <li class="listItem"><a class="link" href={`/details/${data.jokes.indexOf(joke)}`}>{joke.setup}</a></li>
+        <li class="listItem"><a class="link" href={`/details/${data.cast.results.indexOf(person) + 1}`}>{person.name}</a></li>
         {/each}
     </ul>
 </div>
@@ -18,6 +18,9 @@
 <style>
     .top {
         text-align: center;
+    }
+    .top__title {
+        color: darkred;
     }
     .jokeContainer {
         display: grid;
